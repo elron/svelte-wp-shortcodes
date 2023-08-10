@@ -22,26 +22,44 @@ npm install svelte-wp-shortcodes
 
 ## 🛠️ Quick Start
 
-1. **Import the Shortcodes component**:
+1. **Import the Shortcodes component and your custom Svelte components**:
 ```ts
 import WpShortcodes from '@elron/svelte-wp-shortcode';
+
+// Import Your Own Custom Svelte Components
+import SelfClosed from './SelfClosed.svelte';
+import WithSlot from './WithSlot.svelte';
+import WithProps from './WithProps.svelte';
+import AllInOne from './AllInOne.svelte';
 ```
 
-2. **Specify your Svelte components**:
-```ts
-import MyComponent from './MyComponent.svelte';
-```
-
-3. **Use the shortcodes in your content**:
+2. **Use the shortcodes in your content**:
 ```svelte
-<WpShortcodes markup="Here's a special feature: [my-component prop='value']" components={{'my-component': MyComponent}} />
+<WpShortcodes 
+    markup="
+        Simple embed: [self-closed].
+        Text within: [with-slot]Here's some inner text![/with-slot].
+        With properties: [with-props prop1='Hello' prop2='World'].
+        All combined: [all-in-one prop1='Svelte' prop2='Shortcodes']Awesome, right?[/all-in-one].
+    "
+    components={{
+        'self-closed': SelfClosed, 
+        'with-slot': WithSlot,
+        'with-props': WithProps,
+        'all-in-one': AllInOne
+    }} 
+/>
 ```
 
-... and voilà! Your Svelte component MyComponent gets rendered wherever the shortcode is placed.
+Voilà! The `<SelfClosed>`, `<WithSlot>`, `<WithProps>`, and `<AllInOne>` Svelte components are rendered based on their respective shortcode types. Obviously, you can replace them with your own components.
+
 
 
 ## ❤️ Contributing
 Your input is valued! Share your feedback, report bugs, or make pull requests on our GitHub repository.
 
 
+## 📜 License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
