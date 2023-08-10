@@ -4,15 +4,15 @@ Effortlessly blend Svelte components into content with WordPress-inspired shortc
 
 ## 🚀 Features
 
-📌 **Dynamic Embeds**: Seamlessly integrate Svelte components into static content.  
-🔄 **Props Transfer**: Directly pass shortcode attributes as Svelte props.  
-✒️ **Versatile Syntax**: Supports both self-closing ([component]) and pair tags ([component]...[/component]), allowing you to write shortcodes with or without quotes around attribute values ([youtube id="123"] or [youtube id=123]).  
-🎟️ **Slot Support**: Easily pass content between opening and closing shortcodes, which gets rendered using Svelte's `<slot>` mechanism.  
-🧱 **HTML Compatibility**: Seamless integration with HTML content! the library won't interfere with your HTML structure.
-🌐 **SSR Compatibility**: Ready for SvelteKit's server-side rendering.  
+- 📌 **Dynamic Embeds**: Seamlessly integrate Svelte components into static content.  
+- 🔄 **Props Transfer**: Directly pass shortcode attributes as Svelte props.  
+- ✒️ **Versatile Syntax**: Supports both self-closing ([component]) and pair tags ([component]...[/component]), allowing you to write shortcodes with or without quotes around attribute values ([youtube id="123"] or [youtube id=123]).  
+- 🎟️ **Slot Support**: Easily pass content between opening and closing shortcodes, which gets rendered using Svelte's `<slot>` mechanism.  
+- 🧱 **HTML Compatibility**: Seamless integration with HTML content! the library won't interfere with your HTML structure.
+- 🌐 **SSR Compatibility**: Ready for SvelteKit's server-side rendering.  
 🛠️ **Custom Components**: Fully adaptable with your custom Svelte components for personalized designs.  
-📦 **Limitless Integration**: Embed any number of Svelte components or shortcodes without restrictions. 
-👥 **Basic Nested Support**: The library offers initial support for nested shortcodes. It's optimized for simpler use cases, but deeper nesting or intricate scenarios might require special attention.
+- 📦 **Limitless Integration**: Embed any number of Svelte components or shortcodes without restrictions. 
+- 👥 **Basic Nested Support**: The library offers initial support for nested shortcodes. It's optimized for simpler use cases, but deeper nesting or intricate scenarios might require special attention.
 
 
 ## 📦 Installation
