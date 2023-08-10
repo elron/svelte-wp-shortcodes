@@ -6,7 +6,7 @@ Effortlessly blend Svelte components into content with WordPress-inspired shortc
 
 📌 **Dynamic Embeds**: Seamlessly integrate Svelte components into static content.  
 🔄 **Props Transfer**: Directly pass shortcode attributes as Svelte props.  
-✒️ **Versatile Syntax**: Supports both self-closing ([component]) and pair tags ([component]...[/component]).  
+✒️ **Versatile Syntax**: Supports both self-closing ([component]) and pair tags ([component]...[/component]), allowing you to write shortcodes with or without quotes around attribute values ([youtube id="123"] or [youtube id=123]).  
 🎟️ **Slot Support**: Easily pass content between opening and closing shortcodes, which gets rendered using Svelte's `<slot>` mechanism.  
 🌐 **SSR Compatibility**: Ready for SvelteKit's server-side rendering.  
 🛠️ **Custom Components**: Fully adaptable with your custom Svelte components for personalized designs.  
@@ -27,31 +27,31 @@ npm install svelte-wp-shortcodes
 import WpShortcodes from '@elron/svelte-wp-shortcode';
 
 // Import Your Own Custom Svelte Components
-import SelfClosed from './SelfClosed.svelte';
-import WithSlot from './WithSlot.svelte';
-import WithProps from './WithProps.svelte';
-import AllInOne from './AllInOne.svelte';
+import TryButton from './TryButton.svelte';
+import Note from './Note.svelte';
+import Youtube from './Youtube.svelte';
+import Strong from './Strong.svelte';
 ```
 
 2. **Use the shortcodes in your content**:
 ```svelte
 <WpShortcodes 
-    markup="
-        Simple embed: [self-closed].
-        Text within: [with-slot]Here's some inner text![/with-slot].
-        With properties: [with-props prop1='Hello' prop2='World'].
-        All combined: [all-in-one prop1='Svelte' prop2='Shortcodes']Awesome, right?[/all-in-one].
-    "
+    markup={`
+        Simple embed: [try-button].
+        Text within: [note]Here's some inner text![/note].
+        With properties: [youtube id=EVP1NQAnpYk].
+        All combined: [strong color='red' class='text-xl']Awesome, right?[/all-in-one].
+    `}
     components={{
-        'self-closed': SelfClosed, 
-        'with-slot': WithSlot,
-        'with-props': WithProps,
-        'all-in-one': AllInOne
+        'try-button': TryButton, 
+        'note': Note,
+        'youtube': Youtube,
+        'strong': Strong
     }} 
 />
 ```
 
-Voilà! The `<SelfClosed>`, `<WithSlot>`, `<WithProps>`, and `<AllInOne>` Svelte components are rendered based on their respective shortcode types. Obviously, you can replace them with your own components.
+Voilà! The `<TryButton>`, `<Note>`, `<Youtube>`, and `<Strong>` Svelte components are rendered based on their respective shortcode types. Obviously, you can replace them with your own components.
 
 
 
