@@ -10,7 +10,7 @@ Effortlessly blend Svelte components into content with WordPress-inspired shortc
 - 🎟️ **Slot Support**: Easily pass content between opening and closing shortcodes, which gets rendered using Svelte's `<slot>` mechanism.  
 - 🧱 **HTML Compatibility**: Seamless integration with HTML content! the library won't interfere with your HTML structure.
 - 🌐 **SSR Compatibility**: Ready for SvelteKit's server-side rendering.  
-🛠️ **Custom Components**: Fully adaptable with your custom Svelte components for personalized designs.  
+- 🛠️ **Custom Components**: Fully adaptable with your custom Svelte components for personalized designs.  
 - 📦 **Limitless Integration**: Embed any number of Svelte components or shortcodes without restrictions. 
 - 👥 **Basic Nested Support**: The library offers initial support for nested shortcodes. It's optimized for simpler use cases, but deeper nesting or intricate scenarios might require special attention.
 
