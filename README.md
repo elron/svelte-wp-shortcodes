@@ -2,6 +2,8 @@
 
 Effortlessly blend Svelte components into content with WordPress-inspired shortcodes. Simplify dynamic embedding with a familiar touch.
 
+[Demo](https://svelte.dev/repl/9be6fef779144a93926289a1c0ec6781?version=4.1.2)
+
 ## 🚀 Features
 
 - 📌 **Dynamic Embeds**: Seamlessly integrate Svelte components into static content.  
@@ -11,8 +13,7 @@ Effortlessly blend Svelte components into content with WordPress-inspired shortc
 - 🧱 **HTML Compatibility**: Seamless integration with HTML content! the library won't interfere with your HTML structure.
 - 🌐 **SSR Compatibility**: Ready for SvelteKit's server-side rendering.  
 - 🛠️ **Custom Components**: Fully adaptable with your custom Svelte components for personalized designs.  
-- 📦 **Limitless Integration**: Embed any number of Svelte components or shortcodes without restrictions. 
-- 👥 **Basic Nested Support**: The library offers initial support for nested shortcodes. It's optimized for simpler use cases, but deeper nesting or intricate scenarios might require special attention.
+- 📦 **Unlimited Shortcodes**: Embed any number of Svelte components or shortcodes without restrictions. 
 
 
 ## 📦 Installation
@@ -42,7 +43,7 @@ import Strong from './Strong.svelte';
         Simple embed: [try-button]
         Text within: [note]Here's some inner text![/note]
         With properties: [youtube id=EVP1NQAnpYk]
-        All combined: [strong color='red' class='text-xl']Awesome, right?[/all-in-one]
+        All combined: [strong color="red" class="text-xl"]Awesome, right?[/strong]
         With HTML: <i>Still works!<i>
     `}
     components={{
@@ -56,6 +57,11 @@ import Strong from './Strong.svelte';
 
 Voilà! The `<TryButton>`, `<Note>`, `<Youtube>`, and `<Strong>` Svelte components are rendered based on their respective shortcode types. Obviously, you can replace them with your own components.
 
+
+## Notes
+
+- For the shortcode attributes, you must use double quotes `[example message="hey"]` or no quotes at all `[example message=hey]`. Single quotes won't work.
+- The library does not support for nested shortcodes. It's optimized for simpler use cases, but deeper nesting or intricate scenarios might require special attention.
 
 
 ## ❤️ Contributing
