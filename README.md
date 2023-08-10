@@ -38,10 +38,11 @@ import Strong from './Strong.svelte';
 ```svelte
 <WpShortcodes 
     markup={`
-        Simple embed: [try-button].
-        Text within: [note]Here's some inner text![/note].
-        With properties: [youtube id=EVP1NQAnpYk].
-        All combined: [strong color='red' class='text-xl']Awesome, right?[/all-in-one].
+        Simple embed: [try-button]
+        Text within: [note]Here's some inner text![/note]
+        With properties: [youtube id=EVP1NQAnpYk]
+        All combined: [strong color='red' class='text-xl']Awesome, right?[/all-in-one]
+        With HTML: <i>Still works!<i>
     `}
     components={{
         'try-button': TryButton, 
