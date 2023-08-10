@@ -1,13 +1,18 @@
 # Svelte WP Shortcodes
 
-Elevate your Svelte apps with the power of WordPress-like shortcodes! This library allows you to dynamically embed Svelte components within static or dynamic content using the familiar shortcode syntax.
+Effortlessly blend Svelte components into content with WordPress-inspired shortcodes. Simplify dynamic embedding with a familiar touch.
 
 ## 🚀 Features
 
 📌 **Dynamic Embeds**: Seamlessly integrate Svelte components into static content.  
 🔄 **Props Transfer**: Directly pass shortcode attributes as Svelte props.  
+✒️ **Versatile Syntax**: Supports both self-closing ([component]) and pair tags ([component]...[/component]).  
+🎟️ **Slot Support**: Easily pass content between opening and closing shortcodes, which gets rendered using Svelte's `<slot>` mechanism.  
 🌐 **SSR Compatibility**: Ready for SvelteKit's server-side rendering.  
-👥 **Basic Nested Support**: The library offers initial support for nested shortcodes. It's optimized for simpler use cases, but deeper nesting or intricate scenarios might require special attention.  
+🛠️ **Custom Components**: Fully adaptable with your custom Svelte components for personalized designs.  
+📦 **Limitless Integration**: Embed any number of Svelte components or shortcodes without restrictions.  
+👥 **Basic Nested Support**: The library offers initial support for nested shortcodes. It's optimized for simpler use cases, but deeper nesting or intricate scenarios might require special attention.
+
 
 ## 📦 Installation
 
@@ -33,10 +38,6 @@ import MyComponent from './MyComponent.svelte';
 ```
 
 ... and voilà! Your Svelte component MyComponent gets rendered wherever the shortcode is placed.
-
-## 💡 Notes
-- Supports both self-closing ([component]) and pair tags ([component]...[/component]).
-- Developed with love and tested for compatibility with SvelteKit's server-side rendering.
 
 
 ## ❤️ Contributing
