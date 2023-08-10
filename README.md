@@ -17,7 +17,8 @@ Effortlessly blend Svelte components into content with WordPress-inspired shortc
 ## 📦 Installation
 
 ```bash
-npm install svelte-wp-shortcodes
+pnpm install svelte-wp-shortcodes
+// Or use npm
 ```
 
 ## 🛠️ Quick Start
