@@ -66,7 +66,7 @@
   {#if typeof item === 'string'}
     {@html item}
   {:else}
-    <svelte:component this={item.component} {...item.props}>
+    <svelte:component this={item.component} {...item.props} slot={item.content}>
       {item.content}
     </svelte:component>
   {/if}

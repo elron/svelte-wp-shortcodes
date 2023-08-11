@@ -9,7 +9,7 @@ Effortlessly blend Svelte components into content with WordPress-inspired shortc
 - 📌 **Dynamic Embeds**: Seamlessly integrate Svelte components into static content.  
 - 🔄 **Props Transfer**: Directly pass shortcode attributes as Svelte props.  
 - ✒️ **Versatile Syntax**: Supports both self-closing ([component]) and pair tags ([component]...[/component]), allowing you to write shortcodes with or without quotes around attribute values ([youtube id="123"] or [youtube id=123]).  
-- 🎟️ **Slot Support**: Easily pass content between opening and closing shortcodes, which gets rendered using Svelte's `<slot>` mechanism.  
+- 🎟️ **Slot Support**: Easily pass content between opening and closing shortcodes, which gets rendered using Svelte's `<slot>` mechanism. It also supports `export let slot` if you need to get the slot content and use it as a variable.
 - 🧱 **HTML Compatibility**: Seamless integration with HTML content! the library won't interfere with your HTML structure.
 - 🌐 **SSR Compatibility**: Ready for SvelteKit's server-side rendering.  
 - 🛠️ **Custom Components**: Fully adaptable with your custom Svelte components for personalized designs.  
@@ -62,6 +62,7 @@ Voilà! The `<TryButton>`, `<Note>`, `<Youtube>`, and `<Strong>` Svelte componen
 
 - For the shortcode attributes, you must use double quotes `[example message="hey"]` or no quotes at all `[example message=hey]`. Single quotes won't work.
 - The library does not support for nested shortcodes. It's optimized for simpler use cases, but deeper nesting or intricate scenarios might require special attention.
+- The attribute `slot` is reserved so you can use `export let slot` if needed (`<slot />` is supported as well). Example: If this is the shortcode `[shortcode slot="Initial Content"]Overridden Content[/shortcode]` then `export let slot` the `slot` value will become `Overriden Content`.
 
 
 ## ❤️ Contributing
