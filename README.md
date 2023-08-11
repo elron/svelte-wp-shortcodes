@@ -72,6 +72,15 @@ Voilà! The `<TryButton>`, `<Note>`, `<Youtube>`, and `<Strong>` Svelte componen
 - The library does not support for nested shortcodes. It's optimized for simpler use cases, but deeper nesting or intricate scenarios might require special attention.
 - The attribute `slot` is reserved so you can use `export let slot` if needed (`<slot />` is supported as well). Example: If this is the shortcode `[shortcode slot="Initial Content"]Overridden Content[/shortcode]` then `export let slot` the `slot` value will become `Overriden Content`.
 
+## ⚠️ Warning!
+There is a known svelte issue - [{@html} tag is broken during hydration #8213](https://github.com/sveltejs/svelte/issues/8213) - that causes the @html code to render badly (duplicates itself). 
+
+If you encounter an issue, the workaround for now is to disable CSR in SvelteKit, in the `+page.ts` file:
+```ts
+export const csr = false;
+```
+
+If you've found another workaround, please share in the repo.
 
 ## ❤️ Contributing
 Your input is valued! Share your feedback, report bugs, or make pull requests on our GitHub repository.
