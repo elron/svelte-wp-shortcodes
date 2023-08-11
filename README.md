@@ -75,12 +75,44 @@ Voilà! The `<TryButton>`, `<Note>`, `<Youtube>`, and `<Strong>` Svelte componen
 ## ⚠️ Warning!
 There is a known svelte issue - [{@html} tag is broken during hydration #8213](https://github.com/sveltejs/svelte/issues/8213) - that causes the @html code to render badly (duplicates itself). 
 
-If you encounter an issue, the workaround for now is to disable CSR in SvelteKit, in the `+page.ts` file:
+If you encounter an issue, there are two known workarounds for now.
+
+### Workaround #1 is to use `{#key mounted}` wrapper
+
+This workaround still supports SSR (good for SEO).
+
+```svelte
+<script lang="ts">
+  import WpShortcodes from '@elron/svelte-wp-shortcode';
+  import TryButton from './WpShortcodes/TryButton.svelte';
+
+  export let markup: string;
+
+  let components = { 'try-button': TryButton };
+
+  onMount(() => {
+    mounted = true;
+  });
+</script>
+
+{#key mounted}
+  <WpShortcodes {components} {markup} />
+{/key}
+```
+
+### Workaround #2 is to disable CSR in SvelteKit, in the `+page.ts` file:
+
+This will disable SSR (bad for SEO).
+
 ```ts
 export const csr = false;
 ```
 
-If you've found another workaround, please share in the repo.
+---
+
+### Found a solution? Share it.
+
+If you've found another workaround or a fix, please share in the repo, would love your contribution!
 
 ## ❤️ Contributing
 Your input is valued! Share your feedback, report bugs, or make pull requests on our GitHub repository.
