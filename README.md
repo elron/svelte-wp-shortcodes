@@ -14,6 +14,8 @@ Effortlessly blend Svelte components into content with WordPress-inspired shortc
 - 🌐 **SSR Compatibility**: Ready for SvelteKit's server-side rendering.  
 - 🛠️ **Custom Components**: Fully adaptable with your custom Svelte components for personalized designs.  
 - 📦 **Unlimited Shortcodes**: Embed any number of Svelte components or shortcodes without restrictions. 
+- 📜 **Multi-Line Support:** Captures and processes shortcodes with content that spans multiple lines, ensuring a flexible and forgiving user experience.
+
 
 
 ## 📦 Installation

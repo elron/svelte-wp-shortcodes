@@ -1,3 +1,35 @@
-<h1>Welcome to your library project</h1>
-<p>Create your package using @sveltejs/package and preview/showcase your work with SvelteKit</p>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+	import WpShortcodes from '$lib/WpShortcodes.svelte';
+
+	// Import Your Own Custom Svelte Components
+	import HiButton from './components/HiButton.svelte';
+	import Note from './components/Note.svelte';
+	import Youtube from './components/Youtube.svelte';
+	import Strong from './components/Strong.svelte';
+	import Code from './components/Code.svelte';
+</script>
+
+<WpShortcodes
+	components={{
+		'hi-button': HiButton,
+		note: Note,
+		youtube: Youtube,
+		strong: Strong,
+		code: Code
+	}}
+	markup={`
+        <p>Simple embed: [hi-button]</p>
+        <p>Text within: [note]Here's some inner text![/note]</p>
+        <p>With properties: [youtube id=EVP1NQAnpYk]</p>
+        <p>All combined: [strong color="red" classes="text-xl"]Awesome, right?[/strong]</p>
+        <p>With HTML: <i>Still works!<i></p>
+		
+
+&lt;pre class="wp-block-code">[code]&amp;lt;script
+    src="https://run.confettipage.com/here.js"
+    data-confetticode="..."
+    data-trigger="custom"
+>&amp;lt;/script>[/code]&lt;/pre>
+
+    `}
+/>

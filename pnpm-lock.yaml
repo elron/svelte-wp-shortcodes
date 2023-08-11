@@ -29,6 +29,9 @@ devDependencies:
   eslint-plugin-svelte:
     specifier: ^2.30.0
     version: 2.32.4(eslint@8.46.0)(svelte@4.1.2)
+  highlight.js:
+    specifier: ^11.8.0
+    version: 11.8.0
   prettier:
     specifier: ^2.8.0
     version: 2.8.8
@@ -44,6 +47,9 @@ devDependencies:
   svelte-check:
     specifier: ^3.4.3
     version: 3.4.6(postcss@8.4.27)(svelte@4.1.2)
+  svelte-highlight:
+    specifier: ^7.3.0
+    version: 7.3.0
   tslib:
     specifier: ^2.4.1
     version: 2.6.1
@@ -1308,6 +1314,11 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /highlight.js@11.8.0:
+    resolution: {integrity: sha512-MedQhoqVdr0U6SSnWPzfiadUcDHfN/Wzq25AkXiQv9oiOO/sG0S7XkvpFIqWBl9Yq1UYyYOOVORs5UW2XlPyzg==}
+    engines: {node: '>=12.0.0'}
+    dev: true
+
   /ignore-walk@5.0.1:
     resolution: {integrity: sha512-yemi4pMf51WKT7khInJqAvsIGzoqYXblnsz0ql8tM+yi1EKYTY1evX4NAbJrLL/Aanr2HyZeluqU+Oi7MGHokw==}
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
@@ -2021,6 +2032,12 @@ packages:
       postcss: 8.4.27
       postcss-scss: 4.0.6(postcss@8.4.27)
       svelte: 4.1.2
+    dev: true
+
+  /svelte-highlight@7.3.0:
+    resolution: {integrity: sha512-59oE9/xOFXAdT97qXIt6HMlzL2f+0YNQ+BArzRONwCW96ElxX7TGme1kU5s3tsk1D88G5dhBixcP1chOGOkVsg==}
+    dependencies:
+      highlight.js: 11.8.0
     dev: true
 
   /svelte-hmr@0.15.3(svelte@4.1.2):

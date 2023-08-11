@@ -10,7 +10,10 @@
 
     // Generate regex patterns based on provided components
     for (let componentName in components) {
-      shortcodePatterns[`\\[${componentName}(.*?)(?:\\](.*?)\\[/${componentName}\\]|\\])`] =
+      // Doesnt support multi line
+      // shortcodePatterns[`\\[${componentName}(.*?)(?:\\](.*?)\\[/${componentName}\\]|\\])`] =
+      // Supports multi line
+      shortcodePatterns[`\\[${componentName}(.*?)(?:\\]([\\s\\S]*?)\\[/${componentName}\\]|\\])`] =
         components[componentName];
     }
 
