@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
 
 	interface Props {
 		markup: string;
@@ -8,8 +8,16 @@
 
 	let { markup, components = {} }: Props = $props();
 
-	let componentInstances: any[] = $state([]);
-	let parsedMarkup: any[] = $state([]);
+	type ComponentInstance = {
+		start: number;
+		end: number;
+		component: any;
+		props: any;
+		content: any;
+	};
+
+	let componentInstances: ComponentInstance[] = $state([]);
+	let parsedMarkup: (ComponentInstance | string)[] = $state([]);
 
 	let shortcodePatterns: { [pattern: string]: any } = {};
 
@@ -34,8 +42,6 @@
 		return attrs;
 	}
 
-	componentInstances = [];
-
 	// Parse the markup for any shortcode and replace with the corresponding component
 	for (let pattern in shortcodePatterns) {
 		let regex = new RegExp(pattern, 'g');
@@ -57,7 +63,6 @@
 	}
 
 	// Construct the parsedMarkup array for rendering
-	parsedMarkup = [];
 	let lastIndex = 0;
 	componentInstances
 		.sort((a, b) => a.start - b.start)
@@ -67,18 +72,17 @@
 			lastIndex = item.end;
 		});
 	parsedMarkup.push(markup.slice(lastIndex));
-
 </script>
 
-<!-- {#key mounted} -->
-	{#each parsedMarkup as item, index (index)}
-		{#if typeof item === 'string'}
-			{@html item}
-		{:else}
-			<!-- {JSON.stringify(item)} -->
-			<item.component {...item.props} slot={item.content}>
-				{item.content}
-			</item.component>
-		{/if}
-	{/each}
+<!-- {#key browser} -->
+{#each parsedMarkup as item, index (index)}
+	{#if typeof item === 'string'}
+		{@html item}
+	{:else}
+		<!-- {JSON.stringify(item)} -->
+		<item.component {...item.props} slot={item.content}>
+			{item.content}
+		</item.component>
+	{/if}
+{/each}
 <!-- {/key} -->
