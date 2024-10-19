@@ -7,6 +7,11 @@
 	import Youtube from './components/Youtube.svelte';
 	import Strong from './components/Strong.svelte';
 	import Code from './components/Code.svelte';
+
+	let mounted = $state(false);
+	$effect(() => {
+		mounted = true;
+	});
 </script>
 
 <!-- <WpShortcodes
@@ -33,16 +38,18 @@
 
     `}
 /> -->
-<WpShortcodes
-	components={{
-		'hi-button': HiButton,
-		note: Note,
-		youtube: Youtube,
-		strong: Strong,
-		code: Code
-	}}
-	markup={`
+<!-- {#key mounted} -->
+	<WpShortcodes
+		components={{
+			'hi-button': HiButton,
+			note: Note,
+			youtube: Youtube,
+			strong: Strong,
+			code: Code
+		}}
+		markup={`
         <p>Simple embed: [hi-button]</p>
 
     `}
-/>
+	/>
+<!-- {/key} -->
