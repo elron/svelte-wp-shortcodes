@@ -9,7 +9,7 @@
 	import Code from './components/Code.svelte';
 </script>
 
-<WpShortcodes
+<!-- <WpShortcodes
 	components={{
 		'hi-button': HiButton,
 		note: Note,
@@ -25,11 +25,24 @@
         <p>With HTML: <i>Still works!<i></p>
 		
 
-&lt;pre class="wp-block-code">[code]&amp;lt;script
+<pre class="wp-block-code">[code]<script
     src="https://run.confettipage.com/here.js"
     data-confetticode="..."
     data-trigger="custom"
->&amp;lt;/script>[/code]&lt;/pre>
+></script>[/code]</pre>
+
+    `}
+/> -->
+<WpShortcodes
+	components={{
+		'hi-button': HiButton,
+		note: Note,
+		youtube: Youtube,
+		strong: Strong,
+		code: Code
+	}}
+	markup={`
+        <p>Simple embed: [hi-button]</p>
 
     `}
 />

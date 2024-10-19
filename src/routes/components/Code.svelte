@@ -4,7 +4,11 @@
 
 	import 'svelte-highlight/styles/vs2015.css';
 
-	export let slot: string;
+	interface Props {
+		slot: string;
+	}
+
+	let { slot }: Props = $props();
 </script>
 
 <Highlight language={xml} code={slot.replaceAll('&lt;', '<')} />

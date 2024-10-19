@@ -1,6 +1,10 @@
 <script lang="ts">
-	export let id: string;
-	export let title = '';
+	interface Props {
+		id: string;
+		title?: string;
+	}
+
+	let { id, title = '' }: Props = $props();
 </script>
 
 <!-- <small>Youtube Video ID: {id}</small> -->
@@ -11,5 +15,5 @@
 		frameborder="0"
 		allow="autoplay; picture-in-picture; clipboard-write"
 		allowfullscreen
-	/>
+	></iframe>
 </div>
